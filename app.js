@@ -171,9 +171,9 @@ app.post('/signin',(req,res)=>{
     })
 })
 
-const PORT=3000 || process.env.PORT;
+const port=process.env.PORT || 3000
 
-app.listen(PORT, () => {
+app.listen(port, () => {
     console.log('Server is up on port 3000.')
 })
 
