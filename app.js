@@ -39,6 +39,10 @@ var auth = (req,res,next)=>{
    }
 }
 
+app.get('/',(req,res)=>{
+    res.sendfile("signin.html")
+})
+
 app.post('/logout', (req, res) => {
        ssn.username=0;
        res.sendfile('signin.html')
@@ -101,7 +105,7 @@ app.post('/signup',(req,res)=>{
             return console.log('not connected')
         }
                 
-                const db=client.db(databaseName)
+        const db=client.db(databaseName)
         db.collection('users').find({}).toArray().then((data)=>{
             let check=1
             for(let i=0;i<data.length;i++)
